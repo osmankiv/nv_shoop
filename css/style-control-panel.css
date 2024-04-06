@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+    box-sizing: border-box;
+}
+
+html,
+body {
+    
+    font-size: 10px;
+    font-family: 'lato', Arial, Helvetica, sans-serif;
+}
+
+body {
+background-color: rgba(100, 55, 25, 0.5);
+    color: black;
+    min-height: 100vh;
+}
+
+header {
+    font-size: 2rem;
+    display: flex;
+}
+
+.headinglist {
+    font-family: sans-serif;
+    display: inline-flex;
+    position: relative;
+    height: 5px;
+}
+.hlinks {
+    font-family: sans-serif;
+    position: relative;
+    display: flex;
+    width: 50px;
+    color: inherit;
+    text-decoration: inherit;
+    list-style: none;
+}
+
+form {
+    margin: 3% 40%;
+}
+
+
+header,
+form {
+    min-height: 20vh;
+    justify-content: center;
+    align-items: center;
+}
+
+form input,
+form button {
+    padding: 0.5rem;
+    font-size: 2rem;
+    border: none;
+    display: block;
+    border-radius: 10px 5px 2px;
+    background: rgba(0, 0, 0, 0.527);
+}
+
+.heading {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.todo-input {
+    color: white;
+    position: relative;
+    display: block;
+}
+
+.todo-btn {
+    cursor: pointer;
+    padding: 0.35rem;
+    width: 105;
+    border-left: 1px solid white;
+    transition: background 0.2s ease;
+}
+
+.todo-btn:hover {
+    background: #6b25d2;
+}
+
+.todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-list {
+    min-width: 32rem;
+    width: 50vw;
+    list-style: none;
+}
+
+.todo {
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.todo button {
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    font-size: 2rem;
+    transition: transform 0.2s ease;
+}
+
+.todo button:hover {
+    transform: scale(1.1);
+}
+
+.todo li {
+    flex: 1;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.fade-away {
+    transform: translateX(10rem);
+    opacity: 0;
+}
+.main {
+    width: 260px;
+    display: inline-block;
+    position: relative;
+}
+.card {
+    position: relative;
+    top: 2em;
+    width: 12.5em;
+    height: 7.5em;
+    background: white;
+    transition: .4s ease-in-out;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+    overflow: hidden;
+}
+.headingc {
+    position: relative;
+    color: black;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding-top: 0.1em;
+    padding-left: 1em;
+    transition: .4s;
+}
+.details {
+    position: relative;
+    color: black;
+    font-size: 0.6em;
+    padding-top: 1.5em;
+    padding-left: 2em;
+    transition: .4s ease-in-out;
+}
+
+.price {
+    position: relative;
+    color: black;
+    font-weight: bold;
+    font-size: 0.8em;
+    padding-top: 1em;
+    padding-left: 1em;
+    top: 4.6em;
+    left: 5em;
+    transition: .4s ease-in-out;
+}
+
+.btn1 {
+    position: relative;
+    border: none;
+    outline: none;
+    background-color: black;
+    color: white;
+    font-size: 0.6em;
+    padding-left: 6.9em;
+    padding-right: 6.9em;
+    padding-top: 0.8em;
+    padding-bottom: 0.85em;
+    border-radius: 10px;
+    left: 2.6em;
+    top: 6.8em;
+    transition: .4s ease-in-out;
+    font-weight: bold;
+}
+
+.btn1:hover {
+    background-color: limegreen;
+    cursor: pointer;
+}
+
+.btn2 {
+    position: relative;
+    border: none;
+    outline: none;
+    background-color: black;
+    color: white;
+    font-size: 0.6em;
+    padding-left: 5.1em;
+    padding-right: 5.1em;
+    padding-top: 0.8em;
+    padding-bottom: 0.85em;
+    border-radius: 10px;
+    left: 2.6em;
+    top: 8.5em;
+    transition: .4s ease-in-out;
+    font-weight: bold;
+}
+
+.btn2:hover {
+    background-color: limegreen;
+    cursor: pointer;
+}
+
+.glasses {
+    position: relative;
+    top: -4em;
+    left: 9.5em;
+    width: 60px;
+    height: 60px;
+    transition: .4s ease-in-out;
+}
+
+.card:hover {
+    width: 12.5em;
+    height: 15em;
+    background: #FFE87C;
+    transform: translateY(1.25em);
+}
+
+.card:hover+.glasses {
+    transform: rotateX(360deg);
+    height: 50px;
+    width: 100px;
+    left: 3em;
+    top: -13em;
+}
+
+.card:hover .heading {
+    transform: translateY(3.5em) translateX(2.3em);
+}
+
+.card:hover .details {
+    transform: translateY(7em) translateX(3.5em);
+}

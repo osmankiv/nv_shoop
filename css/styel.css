@@ -1,0 +1,356 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgba(100, 55, 25, 0.5);
+  font-weight: bolder;
+  font-family: 'lato', Arial, Helvetica, sans-serif;
+}
+
+.block {
+  position: absolute;
+  display: flex;
+  text-align: center;
+  width: 50px;
+  height: 100px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.02);
+
+}
+
+header {
+  width: 100%;
+  height: 85px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+header img {
+  width: 80px;
+  height: 40px;
+  display: inline-flex;
+  filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.7));
+
+
+}
+
+.delvre {
+  width: 100px;
+  height: 50px;
+  position: relative;
+  display: inline-flex;
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.delvre img {
+  width: 30px;
+  height: 30px;
+
+}
+
+.form-floating select {
+  border-style: none;
+  background: rgba(255, 255, 255, 0.1);
+
+
+}
+
+.option {
+  border-style: none;
+  background-color: rgba(100, 55, 25, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.search-box {
+  position: relative;
+  display: inline-flex;
+  width: 500px;
+  height: 30px;
+}
+
+.search-box img {
+  width: 30px;
+  height: 30px;
+}
+
+.search-box button {
+  border-style: none;
+  background: rgba(1, 0, 0, 0.5);
+
+}
+
+/*
+header ul{
+	width: 70%;
+	display: inline-block;
+}
+header label{
+	display: inline-block;
+	height: 20px;
+}
+header ul li
+{
+	width: 180px;
+	display: inline-block ;
+	background: rgba(255, 255, 255, 0.1);
+   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+header ul li a
+{
+	display: inline-block ;
+	width: 100px;
+	padding: 22px;
+	text-align: center;
+  list-style: none;
+	font-size: 25px;
+	font-family: sans-serif;
+	
+
+}
+header ul li a span{
+
+  background-color: black;
+  color: black;
+  width: 1px;
+  height: 1px;
+
+}
+*/
+
+
+article {
+  position: relative;
+  display: inline-block;
+}
+
+
+.space {
+
+  width: 500px;
+  height: 10px;
+  position: relative;
+  display: inline-block;
+
+}
+
+.cart_num {
+  position: absolute;
+  width: 35px;
+  height: 20px;
+  border-radius: 50%;
+  margin-top: -5px;
+  margin-right: 10px;
+  font-family: fantasy;
+  color: darkred;
+  background: rgba(255, 255, 255, 0.1);
+
+}
+
+.form_floating {
+  position: absolute;
+  width: 90px;
+  height: 60px;
+  border-radius: 50%;
+  margin-top: 5px;
+  margin-right: 40px;
+  font-family: sans-serif;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.form_floating option {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.hlinks {
+  font-family: sans-serif;
+  position: relative;
+  display: flex;
+  width: 80px;
+  color: inherit;
+  text-decoration: inherit;
+  list-style: none;
+}
+
+.headinglist {
+  font-family: sans-serif;
+  display: inline-flex;
+  position: relative;
+  height: 20px;
+}
+
+nav {
+  background: whitesmoke;
+  border-radius: 10px 10px 20px 20px;
+}
+
+.main {
+  width: 260px;
+  display: inline-block;
+  position: relative;
+}
+
+
+
+
+
+.card {
+  position: relative;
+  top: 2em;
+  width: 12.5em;
+  height: 7.5em;
+  background: white;
+  transition: .4s ease-in-out;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+  overflow: hidden;
+}
+
+.heading {
+  position: relative;
+  color: black;
+  font-weight: bold;
+  font-size: 1.1em;
+  padding-top: 0.1em;
+  padding-left: 1em;
+  transition: .4s;
+}
+
+.details {
+  position: relative;
+  color: black;
+  font-size: 0.6em;
+  padding-top: 1.5em;
+  padding-left: 2em;
+  transition: .4s ease-in-out;
+}
+
+.price {
+  position: relative;
+  color: black;
+  font-weight: bold;
+  font-size: 0.8em;
+  padding-top: 1em;
+  padding-left: 1em;
+  top: 4.6em;
+  left: 5em;
+  transition: .4s ease-in-out;
+}
+
+.btn1 {
+  position: relative;
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+  font-size: 0.6em;
+  padding-left: 6.9em;
+  padding-right: 6.9em;
+  padding-top: 0.8em;
+  padding-bottom: 0.85em;
+  border-radius: 10px;
+  left: 2.6em;
+  top: 6.8em;
+  transition: .4s ease-in-out;
+  font-weight: bold;
+}
+
+.btn1:hover {
+  background-color: limegreen;
+  cursor: pointer;
+}
+
+.btn2 {
+  position: relative;
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+  font-size: 0.6em;
+  padding-left: 5.1em;
+  padding-right: 5.1em;
+  padding-top: 0.8em;
+  padding-bottom: 0.85em;
+  border-radius: 10px;
+  left: 2.6em;
+  top: 8.5em;
+  transition: .4s ease-in-out;
+  font-weight: bold;
+}
+
+.btn2:hover {
+  background-color: limegreen;
+  cursor: pointer;
+}
+
+.glasses {
+  position: relative;
+  top: -4em;
+  left: 9.5em;
+  width: 60px;
+  height: 60px;
+  transition: .4s ease-in-out;
+}
+
+.card:hover {
+  width: 12.5em;
+  height: 15em;
+  background: #FFE87C;
+  transform: translateY(1.25em);
+}
+
+.card:hover+.glasses {
+  transform: rotateX(360deg);
+  height: 50px;
+  width: 100px;
+  left: 3em;
+  top: -13em;
+}
+
+.card:hover .heading {
+  transform: translateY(3.5em) translateX(2.3em);
+}
+
+.card:hover .details {
+  transform: translateY(7em) translateX(3.5em);
+}
+
+.accwinicon section {
+  position: relatives;
+  width: 100%;
+  height: 50px;
+  margin: 30% 0% 0% 0%;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.accwinicon section ul {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.accwinicon section ul li {
+  position: relative;
+  width: 200px;
+  height: 30px;
+  display: inline-flex;
+  list-style: none;
+}
+
+.accwinicon section ul li a img {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+}
+
+.coler {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+
+
+}
+
+
+/*jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj*/
