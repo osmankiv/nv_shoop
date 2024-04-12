@@ -1,0 +1,173 @@
+            /*  ===============================
+                    Modification of the body      
+                ===============================
+            */
+            body {
+                padding: 0;
+                margin: 0;
+                font-family: 'DM Sans';
+                font-style: normal;
+            }
+
+            /*  ===============================
+                    Modification of the form      
+                ===============================
+            */
+            .eroorMasseg {
+                position: absolute;
+                color: rgb(15, 15, 15);
+                background-color: #ee183b;
+                font-weight: bold;
+                font-family: 'Times New Roman', Times, serif;
+                border-radius: 50px 50px 10px 0px;
+                display: flex;
+                box-sizing: border-box;
+                margin: 5% 0% 0% 37%;
+                text-align: center;
+                justify-content: center;
+                width: 400px;
+                height: 40px;
+
+
+
+            }
+
+            .todo-input {
+                color: white;
+                position: relative;
+                display: block;
+            }
+
+            .todo-btn {
+                cursor: pointer;
+                padding: 0.35rem;
+                width: 105;
+                border-left: 1px solid white;
+                transition: background 0.2s ease;
+            }
+
+            .todo-btn:hover {
+                background: #6b25d2;
+            }
+
+            .todo-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .todo-list {
+                min-width: 32rem;
+                width: 50vw;
+                list-style: none;
+            }
+
+            .todo {
+                font-size: 1.6rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0.5rem;
+                margin: 0.5rem;
+                background: white;
+                transition: all 0.3s ease;
+            }
+
+            .todo button {
+                cursor: pointer;
+                border: none;
+                background: transparent;
+                font-size: 2rem;
+                transition: transform 0.2s ease;
+            }
+
+            .todo button:hover {
+                transform: scale(1.1);
+            }
+
+            .todo li {
+                flex: 1;
+            }
+
+            .completed {
+                text-decoration: line-through;
+                opacity: 0.5;
+            }
+
+            .fade-away {
+                transform: translateX(10rem);
+                opacity: 0;
+            }
+
+            .form-raper {
+                background-color: #093545;
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .form {
+                width: 467px;
+                padding: 10px 45px;
+                background-color: white;
+                border-radius: 8px;
+            }
+
+            .logo {
+                text-align: center;
+                margin-top: 15px;
+
+            }
+
+            .input {
+                width: 100%;
+                height: 44px;
+                border-radius: 8px;
+                border: 1.4px solid #7D7D7D;
+                box-sizing: border-box;
+                padding: 0 10px;
+            }
+
+            .input-wrapper p {
+                padding: 5px 0;
+                margin: 0;
+            }
+
+            .forget-password {
+                text-align: end;
+                padding: 10px 0;
+            }
+
+            .forget-password a {
+                color: #7D7D7D;
+            }
+
+            .form button {
+                width: 100%;
+                padding: 10px 0;
+                border: 0;
+                border-radius: 8px;
+                background-color: #20DF7F;
+                font-size: 16px;
+                font-weight: bold;
+                margin: 15px 0;
+            }
+
+            .form .creat-account {
+                text-align: center;
+                padding: 10px;
+            }
+
+            .input-wrapper {
+                margin: 10px 0;
+            }
+
+            .fa-solid {
+                font-size: 35px;
+            }
+
+            .Log {
+                text-decoration: none;
+            }

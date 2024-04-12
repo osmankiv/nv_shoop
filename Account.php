@@ -14,14 +14,45 @@
 
     <body>
         <?php
+
+       
+session_start();
+//--------contion ------------
+    $username ="root";
+    $passwoerd="";
+    $database = new PDO("mysql:host=localhost;dbname=shoop items;charset=utf8;", $username,$passwoerd);
+//--------End conetion--------
+//-------add data user--------
+
+
+    if(isset($_POST['submit']))
+    {
+        $user_name=$_POST["user_name"];
+        $passwerd=$_POST["passwerd"]; 
+        $gmail=$_POST["gmail"]; 
+        $phone_number=$_POST["phone_number"];
+        $Gender=$_POST["Gender"];
+        $addData =$database->prepare("INSERT INTO `user`(`user_name`, `passwerd`, `gmail`, `phone_number`, `Gender`) VALUES ('$user_name','$passwerd','$gmail','$phone_number','$Gender')");
+        $addData->execute();
+        echo "done add tha data user";
+        header("location:\shoop/logInForm.php");
+        
+    }
+    
+	
+//------end add user data///
+
+
          
 ?>
 
         <div class="container">
             <div class="title">Sing Up</div>
             <form action="php/index.php" method="post">
+                 
                 <div class="user-details">
                     <div class="input-box">
+                       
                         <span class="details">Full name</span>
                         <input type="text" name="user_name" placeholder="Enter your name" required>
                     </div>
@@ -55,6 +86,7 @@
                     </div>
                 </div>
                 <button class="button" type="submit" name="submit">SIN UPS</button>
+                <button class="button"  class="Log" value="sin up"><!--   --> <a href="log in form.php">log in</a> </button>
             </form>
         </div>
         <script src="js/sin up.js"></script>

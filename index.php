@@ -46,8 +46,8 @@
 				<Li class="hlinks"> <a href="#" class="hlinks">Home</a> </Li>
 				<Li class="hlinks"> <a href="index.html" class="hlinks">Smart</a> </Li>
 				<Li class="hlinks"> <a href="#" class="hlinks">Food</a> </Li>
-				<Li class="hlinks"> <a href="log in form.php" class="hlinks">log in</a> </Li>
-				<Li class="hlinks"> <a href="control-panel.html" class="hlinks">Control-panel</a> </Li>
+				<Li class="hlinks"> <a href="logInForm.php" class="hlinks">log in</a> </Li>
+				<Li class="hlinks"> <a href="control-panel.php" class="hlinks">Control-panel</a> </Li>
 			</ul>
 
 		</nav>
@@ -56,6 +56,43 @@
 			<section>
 				<article>
 					<div class="items">
+		
+						<?php
+						
+						session_start();
+						//--------contion ------------
+    					$username ="root";
+    					$passwoerd="";
+    					$database = new PDO("mysql:host=localhost;dbname=shoop items;charset=utf8;", $username,$passwoerd);
+						//--------End conetion--------
+						
+							
+				
+				
+						 $stmt =$database->prepare("SELECT `heading`, `details`, `price`, `image0`,`id` FROM `items` ");
+						 $stmt->execute();
+						 foreach($stmt as $data){
+						echo'<div class="main">
+							<div class="card">
+								<div class="heading" id="card1">'.$data['heading'].'</div>
+								<div class="details">'.$data['details'].'</div>
+								<div class="price" id="card1a">$'.$data['price'].'</div>
+								<button class="btn1" onclick="buy()">Buy</button>
+								<button class="btn2" onclick="add_cart(1)">Add to Cart</button>
+
+							</div>
+							<svg class="glasses" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+								xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="100px"
+								viewBox="0 0 100 100" xml:space="preserve">
+								<image id="image0" width="100" height="100" x="0" y="0"
+									href="imgs/'.$data['image0'].'"></image>';
+							}
+					
+
+						
+						
+						
+						?>
 						<!--
 						<div class="main">
 							<div class="card">
@@ -338,7 +375,7 @@ wWsAAAAASUVORK5CYII="></image>
 	</body>
 	<script type="text/javascript" src="js/javascript.js"></script>
 	<?php  
-	include 'index.php' 
+
 	 ?>
 
 
