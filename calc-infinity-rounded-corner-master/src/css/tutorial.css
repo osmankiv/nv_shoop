@@ -1,0 +1,10 @@
+.btn {
+  /* ❌ 9999px: arbitary large */
+  /* ✅ infinity: max value */
+  /* ✅ infinity * 1px: turn it into pixel */
+
+  /* `infinity` maps to max finite
+    value `1.86414e+07px` which makes
+    a fully rounded corner */
+  border-radius: calc(infinity * 1px);
+}
