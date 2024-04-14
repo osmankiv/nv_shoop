@@ -18,31 +18,49 @@
                 <Li class="hlinks"> <a href="#" class="hlinks">Smart</a> </Li>
                 <Li class="hlinks"> <a href="#" class="hlinks">Food</a> </Li>
                 <Li class="hlinks"> <a href="#" class="hlinks">Cofee</a> </Li>
-                <Li class="hlinks"> <a href="control-panel.html" class="hlinks">Control-panel</a> </Li>
+                <Li class="hlinks"> <a href="control-panel.php" class="hlinks">Control-panel</a> </Li>
             </ul>
 
         </nav>
-         <form action="php/controlPnelBack.php" method="post" class="foem">
-             <?php
-     session_start();
-     $addAdata =$_SESSION['$addAdata'];
+         <form action="php/controlPnelBack.php" method="post" enctype="multipart/form-data" class="foem">
+             <?php          
 
-        if($addAdata==true){
-         echo ('<span><div class="outside outside-warning">
-            <div class="inside inside-warning">
-            <div id="head">&#128683; data filed : </div>
-               username or passwerd is faild
-        </div>
-    </div> 
-    </span>');}
-        
+//--------contion ------------
+    $username ="root";
+    $passwoerd="";
+    $database = new PDO("mysql:host=localhost;dbname=shoop items;charset=utf8;", $username,$passwoerd);
+//--------End conetion--------
+    $stmt =$database->prepare("SELECT `heading`, `details`, `price`, `image0`,`id` FROM `items` ");
+	$stmt->execute();
+    session_start();
+    foreach($stmt as $data)
+        { 
+          $ID = $data['id'];  
+        }
+	
+           
+            if(isset($_POST['submit']))
+            {
+                $addAdata =$_SESSION['$addAdata'];
+                if($addAdata==true)
+                {
+                    echo ('<span><div class="outside outside-warning">
+                    <div class="inside inside-warning">
+                    <div id="head">&#128683;successful: </div>
+                    Done add item
+                    </div>
+                    </div> 
+                    </span>');
+                }
+    }
+    
         ?>
        
         <header>
             <h1>add - items 📃</h1>
         </header>
        
-            <input type="num"  name="id" hidden value="<?php $ID  ?>" class="todo-input" heading></input>
+            <input type="text"  name="id"  value="<?php echo (++$ID); $ID ?>" class="todo-input" heading ></input>
             <h2 class="heading" >heading</h2>
             <input type="text"   name="heading" class="todo-input heading1">
             <h2 class="heading">details</h2>
@@ -51,8 +69,9 @@
             <input type="text" name="price" class="todo-input price1">
             <h2 class="heading">image0 link</h2>
             <input type="file"  name="image0"class="todo-input image01">
+            <input type="file"  name="image"class="todo-input image01">
             <br>
-              <button  type="submit"  name="submit" > ➕ add - items</button>
+              <button  type="submit"  name="submit" value="uplode data" > ➕ add - items</button>
         </form>
         <div class="todo-container">
             <ul class="todo-list">

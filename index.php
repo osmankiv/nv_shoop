@@ -64,18 +64,21 @@
     					$username ="root";
     					$passwoerd="";
     					$database = new PDO("mysql:host=localhost;dbname=shoop items;charset=utf8;", $username,$passwoerd);
-						//--------End conetion--------
 						
-							
-				
-				
-						 $stmt =$database->prepare("SELECT `heading`, `details`, `price`, `image0`,`id` FROM `items` ");
-						 $stmt->execute();
-						 foreach($stmt as $data){
 
-						echo'<div class="main">1
-							<div class="card">1
-							<div class="heading" id="card1">'.$data['id'].'</div>
+
+
+						//GET DATA
+  						 $stmt =$database->prepare("SELECT `heading`, `details`, `price`, `image0`,`id` FROM `items` ");
+						 $stmt->execute();
+						 foreach($stmt as $data)
+						 {
+							if($data['id'] !=0)
+							{
+								//Display the items in the card syel
+								echo'<div class="main">1
+								<div class="card">1
+								<div class="heading" id="card1">'.$data['id'].'</div>
 								<div class="heading" id="card1">'.$data['heading'].'</div>
 								<div class="details">'.$data['details'].'</div>
 								<div class="price" id="card1a">$'.$data['price'].'</div>
@@ -83,14 +86,14 @@
 								<button class="btn2" onclick="add_cart(1)">Add to Cart</button>
 
 							
-							<svg class="glasses" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+								<svg class="glasses" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
 								xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="100px"
 								viewBox="0 0 100 100" xml:space="preserve">
 								<image id="image0" width="100" height="100" x="0" y="0"
 									href="imgs/'.$data['image0'].'"></image>
 									</div><br>';
-									
 							}
+						}
 					
 
 						

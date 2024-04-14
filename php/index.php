@@ -15,7 +15,7 @@ session_start();
     $username ="root";
     $passwoerd="";
     $database = new PDO("mysql:host=localhost;dbname=shoop items;charset=utf8;", $username,$passwoerd);
-//--------End conetion--------
+
 //-------add data user--------
 
 
@@ -34,7 +34,7 @@ session_start();
     }
     
 	
-//------end add user data///
+
 
 ?>
 </body>
