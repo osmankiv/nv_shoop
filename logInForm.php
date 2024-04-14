@@ -52,7 +52,15 @@ session_start();
             }
 
         }else{
-              echo '<span class="eroorMasseg ">username or passwerd is faild </span> '; 
+              echo '<span><div class="outside outside-warning">
+        <div class="inside inside-warning">
+            <div id="head">&#128683; data filed : </div>
+               username or passwerd is faild
+        </div>
+    </div> 
+    </span>
+              
+              '; 
         }
        
   
@@ -62,6 +70,7 @@ session_start();
     }
       
  ?>
+ 
     <div class="form-raper">
         <form action="" method="POST"  class="form">
             <div class="logo">
@@ -82,6 +91,8 @@ session_start();
              <button class="button"  class="Log" value="sin up"><!--   --> <a href="account.php">sin up</a> </button>
             </div>
 
+
+  
         </form>
 
     </div>

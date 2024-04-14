@@ -31,8 +31,13 @@
         $image0=$_POST["image0"];
         $addData =$database->prepare("INSERT INTO `items`(`id`,`heading`, `details`, `price`, `image0`) VALUES ('$id','$heading','$details','$price','$image0')");
         $addData->execute();
-        echo "done add tha data user";
-        header("location:\shoop/control-panel.php");
+        $_SESSION['$addAdata']=true;
+        
+         
+          header("location:\shoop/control-panel.php");
+       ;
+            
+      
     }
     
         

@@ -22,10 +22,26 @@
             </ul>
 
         </nav>
+         <form action="php/controlPnelBack.php" method="post" class="foem">
+             <?php
+     session_start();
+     $addAdata =$_SESSION['$addAdata'];
+
+        if($addAdata==true){
+         echo ('<span><div class="outside outside-warning">
+            <div class="inside inside-warning">
+            <div id="head">&#128683; data filed : </div>
+               username or passwerd is faild
+        </div>
+    </div> 
+    </span>');}
+        
+        ?>
+       
         <header>
             <h1>add - items 📃</h1>
         </header>
-        <form action="php/controlPnelBack.php" method="post" class="foem">
+       
             <input type="num"  name="id" hidden value="<?php $ID  ?>" class="todo-input" heading></input>
             <h2 class="heading" >heading</h2>
             <input type="text"   name="heading" class="todo-input heading1">

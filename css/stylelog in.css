@@ -7,97 +7,14 @@
                 margin: 0;
                 font-family: 'DM Sans';
                 font-style: normal;
+
             }
 
             /*  ===============================
                     Modification of the form      
                 ===============================
             */
-            .eroorMasseg {
-                position: absolute;
-                color: rgb(15, 15, 15);
-                background-color: #ee183b;
-                font-weight: bold;
-                font-family: 'Times New Roman', Times, serif;
-                border-radius: 50px 50px 10px 0px;
-                display: flex;
-                box-sizing: border-box;
-                margin: 5% 0% 0% 37%;
-                text-align: center;
-                justify-content: center;
-                width: 400px;
-                height: 40px;
 
-
-
-            }
-
-            .todo-input {
-                color: white;
-                position: relative;
-                display: block;
-            }
-
-            .todo-btn {
-                cursor: pointer;
-                padding: 0.35rem;
-                width: 105;
-                border-left: 1px solid white;
-                transition: background 0.2s ease;
-            }
-
-            .todo-btn:hover {
-                background: #6b25d2;
-            }
-
-            .todo-container {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-            .todo-list {
-                min-width: 32rem;
-                width: 50vw;
-                list-style: none;
-            }
-
-            .todo {
-                font-size: 1.6rem;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 0.5rem;
-                margin: 0.5rem;
-                background: white;
-                transition: all 0.3s ease;
-            }
-
-            .todo button {
-                cursor: pointer;
-                border: none;
-                background: transparent;
-                font-size: 2rem;
-                transition: transform 0.2s ease;
-            }
-
-            .todo button:hover {
-                transform: scale(1.1);
-            }
-
-            .todo li {
-                flex: 1;
-            }
-
-            .completed {
-                text-decoration: line-through;
-                opacity: 0.5;
-            }
-
-            .fade-away {
-                transform: translateX(10rem);
-                opacity: 0;
-            }
 
             .form-raper {
                 background-color: #093545;
@@ -108,7 +25,7 @@
                 justify-content: center;
             }
 
-            .form {
+            form {
                 width: 467px;
                 padding: 10px 45px;
                 background-color: white;
@@ -170,4 +87,30 @@
 
             .Log {
                 text-decoration: none;
+            }
+
+            #head {
+                font-weight: 700;
+                font-family: 'Chivo', sans-serif;
+                font-size: 20px;
+                color: #ff0a0a;
+            }
+
+            .outside-warning {
+                width: 467px;
+                position: absolute;
+                border: solid 2px #ff4444;
+                border-radius: 6px;
+                -moz-border-radius: 6px;
+                -webkit-border-radius: 6px;
+                line-height: 28px;
+                overflow: hidden;
+                padding: 10px 60px;
+                background-color: rgb(255, 235, 235);
+                margin: 10px 400px;
+            }
+
+            .inside-warning {
+                border-left: solid 3px #ff4444;
+                padding-left: 20px;
             }
