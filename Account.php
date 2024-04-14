@@ -36,6 +36,7 @@ session_start();
         $addData->execute();
         echo "done add tha data user";
         header("location:\shoop/logInForm.php");
+         // header("location:\shoop/logInForm.php");
         
     }
     
