@@ -18,10 +18,7 @@
        
 session_start();
 //--------contion ------------
-    $username ="root";
-    $passwoerd="";
-    $database = new PDO("mysql:host=localhost;dbname=shoop items;charset=utf8;", $username,$passwoerd);
-//--------End conetion--------
+    include 'conationDB.php';
 //-------add data user--------
 
 
@@ -34,23 +31,31 @@ session_start();
         $Gender=$_POST["Gender"];
         $addData =$database->prepare("INSERT INTO `user`(`user_name`, `passwerd`, `gmail`, `phone_number`, `Gender`) VALUES ('$user_name','$passwerd','$gmail','$phone_number','$Gender')");
         $addData->execute();
-        echo "done add tha data user";
-        header("location:\shoop/logInForm.php");
-         // header("location:\shoop/logInForm.php");
+        // in need dising of scaccfull masseg 
+
+
+        ////
+        echo '
+                  <span>
+                        <div class="outside outside-warning">
+                            <div class="inside inside-warning">
+                                <div id="head">&#128683; add user  : </div>
+                                welcom in your home
+                            </div>
+                        </div> 
+                    </span>
+                    ';
+     //   header("location:loginform.php");
+         // header("location:logInForm.php");
          //add new line 
         
-    }
-    
-	
-//------end add user data///
-
-
-         
+    }	
+//------end add user data///       
 ?>
 
         <div class="container">
             <div class="title">Sing Up</div>
-            <form action="php/index.php" method="post">
+            <form action="" method="post">
                  
                 <div class="user-details">
                     <div class="input-box">
@@ -88,7 +93,7 @@ session_start();
                     </div>
                 </div>
                 <button class="button" type="submit" name="submit">SIN UPS</button>
-                <button class="button"  class="Log" value="sin up"><!--   --> <a href="log in form.php">log in</a> </button>
+                <button class="button"  class="Log" value="sin up"><!--   --> <a href="loginform.php">log in</a> </button>
             </form>
         </div>
         <script src="js/sin up.js"></script>

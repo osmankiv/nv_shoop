@@ -14,9 +14,7 @@
     
         session_start();
 //--------contion ------------
-    $username ="root";
-    $passwoerd="";
-    $database = new PDO("mysql:host=localhost;dbname=shoop items;charset=utf8;", $username,$passwoerd);
+  include '../conationDB.php';
 //--------End conetion--------
 //-------add data items--------
 
@@ -46,7 +44,7 @@
             echo"file type is not real imge";
             $upLodeOk=0;
         }
-
+        
          $addData =$database->prepare("INSERT INTO `items`(`id`,`heading`, `details`, `price`, `image0`,`linkOfImge`) VALUES ('$id','$heading','$details','$price','$file_dir','$linkOfImge')");
         $addData->execute();
          

@@ -26,16 +26,16 @@
              <?php          
 
 //--------contion ------------
-    $username ="root";
-    $passwoerd="";
-    $database = new PDO("mysql:host=localhost;dbname=shoop items;charset=utf8;", $username,$passwoerd);
+   include 'conationDB.php';
 //--------End conetion--------
     $stmt =$database->prepare("SELECT `heading`, `details`, `price`, `image0`,`id` FROM `items` ");
 	$stmt->execute();
     session_start();
     foreach($stmt as $data)
         { 
+          
           $ID = $data['id'];  
+          
         }
 	
            
@@ -60,16 +60,16 @@
             <h1>add - items 📃</h1>
         </header>
        
-            <input type="text"  name="id"  value="<?php echo (++$ID); $ID ?>" class="todo-input" heading ></input>
+            <input type="text"  name="id"  value="<?php  echo (++$ID); $ID ?>" class="todo-input" heading ></input>
             <h2 class="heading" >heading</h2>
-            <input type="text"   name="heading" class="todo-input heading1">
+            <input type="text"   name="heading" class="todo-input heading1"require>
             <h2 class="heading">details</h2>
-            <input type="text"  name="details" class="todo-input details1 ">
+            <input type="text"  name="details" class="todo-input details1 "require>
             <h2 class="heading">price</h2>
-            <input type="text" name="price" class="todo-input price1">
+            <input type="text" name="price" class="todo-input price1"require>
             <h2 class="heading">image0 link</h2>
-            <input type="file"  name="image0"class="todo-input image01">
-            <input type="file"  name="image"class="todo-input image01">
+            <input type="file"  name="image0"class="todo-input image01" require>
+            <input type="file"  name="image"class="todo-input image01" require>
             <br>
               <button  type="submit"  name="submit" value="uplode data" > ➕ add - items</button>
         </form>
