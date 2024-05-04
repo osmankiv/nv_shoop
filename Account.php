@@ -29,7 +29,9 @@ session_start();
         $gmail=$_POST["gmail"]; 
         $phone_number=$_POST["phone_number"];
         $Gender=$_POST["Gender"];
-        $addData =$database->prepare("INSERT INTO `user`(`user_name`, `passwerd`, `gmail`, `phone_number`, `Gender`) VALUES ('$user_name','$passwerd','$gmail','$phone_number','$Gender')");
+        $_SERVER['REMOTE_ADDR'];// get ip of the user
+        $user_ip=$_SERVER['REMOTE_ADDR'];
+        $addData =$database->prepare("INSERT INTO `user`(`user_name`, `passwerd`, `gmail`, `phone_number`, `Gender`, `ipUser`) VALUES ('$user_name','$passwerd','$gmail','$phone_number','$Gender','$user_ip')");
         $addData->execute();
         // in need dising of scaccfull masseg 
 
@@ -39,7 +41,7 @@ session_start();
                   <span>
                         <div class="outside outside-warning">
                             <div class="inside inside-warning">
-                                <div id="head">&#128683; add user  : </div>
+                                <div id="head">&#128682; add user scaccfull  : </div>
                                 welcom in your home
                             </div>
                         </div> 

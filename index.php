@@ -5,6 +5,7 @@
 		<meta charset="utf-8">
 		<meta lang="EN">
 		<link rel="stylesheet" type="text/css" href="css/styel.css">
+		<script type="text/javascript" src="js/javascript.js"></script>
 		<title>osman-shoop</title>
 	</head>
 
@@ -12,25 +13,61 @@
 		<header>
 			<?php 
 			session_start();
-			echo 'wicome '. $_SESSION['username'].'<br>';
-			
-			?>
-			<img src="imgs/imagination.png">
-			<a href="#" tabindex="0" class="delvre">
-				<span>
-					<img src="imgs/location.png">
-					deilvr to
-					<div class="form-floating">
-						<select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-							<option selected class="option">natchnal</option>
-							<option value="1" class="option">sudan</option>
-							<option value="2" class="option">egpt</option>
-							<option value="3" class="option">sudu arbia</option>
-						</select>
+			//--------contion ------------
+						 include 'conationDB.php';				
+			///
+         
 
+			 
+			if( isset($_SESSION['username']))
+			{
+				// profile
+				echo '
+					<div>
+						<em>welcome '. $_SESSION['username'].'</em><br>
 					</div>
+				';
+				$userName=$_SESSION['username'];
 
-				</span>
+			
+				 //add user location dlevaring
+				if(isset($_POST["userLoction"]))
+				{
+					$addUserLocstion= $_POST["userLoction"];
+					$addUserLocstionDilever=$database->prepare("UPDATE `user` SET `delverloction`='$addUserLocstion' WHERE `user_name` = '$userName'");
+				$addUserLocstionDilever->execute();
+				header("location:card.php");
+				
+			}
+			}
+				
+
+
+
+			 
+
+			?>
+			
+				<img src="imgs/balance.png"> <!--tha main icon of main page -->
+			<form action="" method="post"  class="delvre">
+				<a href="#" tabindex="0" class="delvre">
+					<span> 
+
+						<img src="imgs/location.png">
+						deilvr to
+						<div class="form-floating">
+							<select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="userLoction" >
+								<option selected class="option" type="submit">natchnal</option>
+								<option value="sudan" class="option">sudan</option>
+								<option value="egpt" class="option">egpt</option>
+								<option value="sudu arbia" class="option">sudu arbia</option>
+							</select>
+
+						</div>
+						   <button class="button" name="submit" >GO TO CARD </button>
+
+					</span>
+			</form>		
 			</a>
 			<div class="search-box">
 				<input type="search" name="search" class="search-box"><button onclick="submit"><img
@@ -44,6 +81,7 @@
 				<img src="imgs/shopping-cart (2).png">
 			</a>
 			<span> <input type="number" name="cart-num" class="cart_num" value="0" disabled id="cart_num"></span>
+			
 		</header>
 		<nav>
 			<ul class="headinglist">
@@ -65,36 +103,39 @@
 
 						<?php
 	
-						//--------contion ------------
-						 include 'conationDB.php';				
-						///
+						
 
-						//GET DATA
-  						$stmt =$database->prepare("SELECT `heading`, `details`, `price`, `image0`,`id` FROM `items` ");
-						$stmt->execute();
-						foreach($stmt as $data)
-						{
-							if($data['id'] !=0)
+							//GET DATA
+							
+							
+							//diapy items 
+
+
+  							$stmt =$database->prepare("SELECT `heading`, `details`, `price`, `image0`,`id` FROM `items` ");
+							
+							$stmt->execute();
+							foreach($stmt as $data)
 							{
-								//Display the items in the card syel
-								echo'
-								<div class="main">
-									<div class="card">	
-										<div class="heading" id="card1">'.$data['heading'].''.$data['id'].'</div>
-										<div class="details">'.$data['details'].'</div>
-										<div class="price" id="card1a">$'.$data['price'].'</div>
-										<button class="btn1" onclick="buy()">Buy</button>
-										<button class="btn2" onclick="add_cart(1)">Add to Cart</button>
-									</div>
-									<svg class="glasses" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-											xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="100px"
-											viewBox="0 0 100 100" xml:space="preserve">
-											<image id="image0" width="100" height="100" x="0" y="0" href="'.$data['image0'].'"></image>
+								if($data['id'] !=0)
+								{
+									//Display the items in the card syel
+									echo'
+									<div class="main">
+										<div class="card" id ="'.$data['id'].'" >	
+											<div class="heading" id="item_name'.$data['id'].'">'.$data['heading'].'</div>
+											<div class="details">'.$data['details'].'</div>
+											<div class="price" id="item_sell'.$data['id'].'">$'.$data['price'].'</div>
+											<button class="btn1" onclick="buy()">Buy</button>
+											<button class="btn2" onclick="add_cart('.$data['id'].')">Add to Cart</button>
+										</div>
+										<svg class="glasses" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+												xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="100px"
+												viewBox="0 0 100 100" xml:space="preserve">
+												<image id="image0" width="100" height="100" x="0" y="0" href="'.$data['image0'].'"></image>
 										</svg>
-								</div>
-								';
-							}
-						}						
+									</div>';
+								}
+							}						
 						?>
 						<hr>
 				
@@ -124,14 +165,9 @@
 				</section>
 
 			</div>
+			<span id="copy_riten"></span>
 		</footer>
 
 	</body>
-	<script type="text/javascript" src="js/javascript.js"></script>
-	<?php  
-
-	 ?>
-
-
-
+	
 </html>

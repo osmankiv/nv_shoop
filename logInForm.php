@@ -22,6 +22,23 @@
         session_start();
         //--------contion ------------
          include 'conationDB.php';
+        //////////////////////////////
+        // tha ip locer free palstin//
+           $_SERVER['REMOTE_ADDR'];// get ip of the user
+		///////////////////////////// 
+        $user_ip=$_SERVER['REMOTE_ADDR'];
+        for ($block_ip= 128 ; $block_ip >= 143 ; $block_ip ++ )
+        {
+            $ip = '101.44'.$block_ip;
+            echo $block_ip;
+            if($user_ip == $block_ip )//block ip  
+            {
+                 header("location:");/// the error page
+            } 
+        }
+          echo '101.44.'.$block_ip.'<br>';
+           echo '101.44.'.$user_ip.'<br>';
+        ////////////////////////////////
 
         if(isset($_POST['submit']))
         {
@@ -30,24 +47,33 @@
  
             $username=$_POST["username"];
             $passwerd=$_POST["passwerd"];
+
             $stmt = $database->prepare("SELECT * FROM `user` WHERE user_name = :username And passwerd = :passwerd ");
             $stmt->bindParam(':username',$username);
             $stmt->bindParam(':passwerd',$passwerd);
             $stmt->execute();
             $user =$stmt->fetch();
-        
+           
             if($user){
 
                 if(password_verify($passwerd,$user['passwerd']))
                     {
-                       $_SESSION['logged_in']= true;
-                       $_SESSION['username']= $user['username'];
-                         header("location:index.php");
+                       //$_SESSION['logged_in']= true;
+                       //$_SESSION['username']= $user['username'];
+                       //  header("location:index.php");
                     }
                     else
                     {
                        $_SESSION['logged_in']= true;
                        $_SESSION['username']=  $username;
+                        ///save tha ip user////
+                        $add_ip = $database->prepare(" UPDATE `user` SET `ipUser` = '101.44.1'  WHERE  `user_name`='$username' ");
+                        $add_ip->execute();
+
+
+                        
+                        //////
+        
                         header("location:index.php?".SID."");
                        
                     

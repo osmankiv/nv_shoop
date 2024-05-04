@@ -28,9 +28,19 @@
 //--------contion ------------
    include 'conationDB.php';
 //--------End conetion--------
+session_start();
+			
+         
+
+			 
+			if( isset($_SESSION['username']))
+			{
+				echo '<h1><em>welcome '. $_SESSION['username'].'</em><br>';
+			}
+			 
     $stmt =$database->prepare("SELECT `heading`, `details`, `price`, `image0`,`id` FROM `items` ");
 	$stmt->execute();
-    session_start();
+   
     foreach($stmt as $data)
         { 
           
